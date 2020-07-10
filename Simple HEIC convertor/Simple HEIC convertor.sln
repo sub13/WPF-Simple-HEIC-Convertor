@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple HEIC convertor", "Simple HEIC convertor\Simple HEIC convertor.csproj", "{BE449F17-9000-47EF-BC7E-90DC72A81A98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Debug|x64.ActiveCfg = Debug|x64
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Debug|x64.Build.0 = Debug|x64
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Release|x64.ActiveCfg = Release|x64
+		{BE449F17-9000-47EF-BC7E-90DC72A81A98}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB9B7D75-4D48-4D1B-8103-3821EEFF4125}
+	EndGlobalSection
+EndGlobal

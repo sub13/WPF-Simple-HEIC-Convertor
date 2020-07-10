@@ -1,0 +1,27 @@
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.exe.config
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.exe
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\App.g.cs
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor_MarkupCompile.cache
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.g.resources
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple_HEIC_convertor.Properties.Resources.resources
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.GenerateResource.cache
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.exe
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET-Q16-AnyCPU.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET.Core.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET-Q16-AnyCPU.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET.Core.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.CopyComplete
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
