@@ -6,19 +6,38 @@
         mc:Ignorable="d"
         Icon="apple1.ico"
         
-        Title="Simple HEIC Convertor" Height="243" Width="537" ResizeMode="NoResize" ShowInTaskbar="False">
-    <Grid Margin="0,0,12,-5" Height="217" VerticalAlignment="Top">
+        Title="Simple HEIC Convertor" Height="480" Width="640" ResizeMode="CanMinimize">
+    <Grid Margin="0,0,-6,-1" Height="452" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="441*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Выбрать файлы" Margin="83,0,328,90" VerticalAlignment="Bottom" Height="32" Grid.Column="1" Click="Button_Click"/>
-        <Button Content="Путь сохранения" Margin="338,95,59,90" Grid.Column="1" Click="Button_Click_1"/>
-        <RadioButton x:Name="RadioButton1" Grid.ColumnSpan="2" Content="JPG" HorizontalAlignment="Left" Margin="83,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003"/>
-        <RadioButton x:Name="RadioButton2" Grid.ColumnSpan="2" Content="PNG" HorizontalAlignment="Left" Margin="83,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003"/>
-        <Button Grid.ColumnSpan="2" Content="Конвертировать" HorizontalAlignment="Right" Margin="0,151,191,34" Width="119" Click="Button_Click_2"/>
-        <ProgressBar x:Name="progressBar1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="37" Margin="83,34,0,0" VerticalAlignment="Top" Width="375"/>
-        <Button Grid.ColumnSpan="2" Content="Справка" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="21" Click="Button_Click_3"/>
-
+        <Button Content="Выбрать файлы" AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="0,266,360,0" Grid.Column="1" Click="Button_Click" HorizontalAlignment="Right" Width="230" Height="32" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button Content="Путь сохранения" Margin="360,266,0,0" Grid.Column="1" Click="Button_Click_1" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Grid.Row="1"/>
+        <RadioButton x:Name="RadioButton1" Grid.ColumnSpan="2" Content="JPG" HorizontalAlignment="Left" Margin="54,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003" Grid.Row="1"/>
+        <RadioButton x:Name="RadioButton2" Grid.ColumnSpan="2" Content="PNG" HorizontalAlignment="Left" Margin="54,337,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003" Grid.Row="1"/>
+        <Button Grid.ColumnSpan="2" Content="Конвертировать" Margin="253,332,0,0" Click="Button_Click_2" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137" Grid.Row="1"/>
+        <ProgressBar x:Name="progressBar1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="37" Margin="50,0,0,379" VerticalAlignment="Bottom" Width="540" Value="0" SmallChange="0" Grid.Row="1"/>
+        <ScrollViewer Background ="GhostWhite" AllowDrop="True" PreviewDrop="get_files_from_explorer" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="142" Margin="50,0,0,196" VerticalAlignment="Bottom" Width="540" RenderTransformOrigin="-0.32,0.82" CanContentScroll="True" Grid.Row="1">
+            <StackPanel x:Name="FilesPanel" Height="142" Width="524">
+                <StackPanel.ToolTip>
+                    <ToolTip>
+                        Нажмите на файл два раза левой кнопкой для предварительного просмотра!
+                    </ToolTip>
+                </StackPanel.ToolTip>
+            </StackPanel>
+        </ScrollViewer>
+        <Label Grid.ColumnSpan="2" Content="Формат для конвертирования:" HorizontalAlignment="Left" Margin="50,306,0,0" VerticalAlignment="Top" Width="180" Grid.Row="1"/>
+        <Label Grid.ColumnSpan="2" Content="Открытые файлы:" HorizontalAlignment="Left" Margin="50,72,0,0" VerticalAlignment="Top" Width="309" Grid.Row="1"/>
+        <Button Click="Clean_Click" x:Name="CleanFilesButton" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="565,72,0,0" VerticalAlignment="Top" Width="25" Height="25" RenderTransformOrigin="-0.84,0.44" Visibility="Hidden" Grid.Row="1">
+            <Image x:Name="CleanImage" Source="clean.png" Height="20" Width="20" Stretch="Fill"/>
+        </Button>
+        <ToolBar Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="21" Margin="-3,0,566,431" VerticalAlignment="Bottom" Width="77" Grid.RowSpan="2">
+            <Button Content="Справка" HorizontalAlignment="Center" VerticalAlignment="Top" Width="65" Height="22" Click="Button_Click_3"/>
+        </ToolBar>
     </Grid>
 </Window>

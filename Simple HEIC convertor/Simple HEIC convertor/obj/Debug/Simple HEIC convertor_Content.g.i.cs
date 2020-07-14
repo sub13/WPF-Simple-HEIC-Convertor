@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("apple1.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("clean.png")]
 
 

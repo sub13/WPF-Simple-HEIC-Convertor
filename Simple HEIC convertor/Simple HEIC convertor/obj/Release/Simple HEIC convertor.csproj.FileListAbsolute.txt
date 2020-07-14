@@ -25,3 +25,7 @@ C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Rel
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.csproj.CopyComplete
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.exe
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.csprojAssemblyReference.cache
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.g.cs
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor_MarkupCompile.lref
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.baml
