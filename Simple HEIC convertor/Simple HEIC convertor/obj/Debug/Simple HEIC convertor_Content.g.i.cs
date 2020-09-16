@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("clean.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("heic_converter_icone.ico")]
 
 

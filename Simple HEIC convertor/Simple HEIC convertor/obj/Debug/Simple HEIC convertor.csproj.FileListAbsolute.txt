@@ -29,3 +29,9 @@ C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Deb
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.exe
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.pdb
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csprojAssemblyReference.cache
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignColors.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\App.baml

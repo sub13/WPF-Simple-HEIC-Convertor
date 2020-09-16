@@ -29,3 +29,9 @@ C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Rel
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.g.cs
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor_MarkupCompile.lref
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.baml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignColors.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignColors.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\App.baml

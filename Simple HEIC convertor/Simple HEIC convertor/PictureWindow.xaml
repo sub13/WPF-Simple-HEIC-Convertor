@@ -12,7 +12,7 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Image  Stretch="Fill" Source="C:\Users\Sergey\Desktop\IMG_1529 — копия (2).png" x:Name="PictureContainer" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-9,-11,3" Grid.ColumnSpan="3" Width="631" Height="447"/>
+        
 
     </Grid>
 </Window>

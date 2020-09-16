@@ -5,25 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Icon="apple1.ico"
-        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Simple HEIC Convertor" Height="480" Width="640" ResizeMode="CanMinimize">
-    <Grid Margin="0,0,-6,-1" Height="452" VerticalAlignment="Top">
+
+
+    <Grid Margin="0,-2,-8,-4" HorizontalAlignment="Right" Width="640" Height="455" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="441*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="125*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Выбрать файлы" AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="0,266,360,0" Grid.Column="1" Click="Button_Click" HorizontalAlignment="Right" Width="230" Height="32" VerticalAlignment="Top" Grid.Row="1"/>
-        <Button Content="Путь сохранения" Margin="360,266,0,0" Grid.Column="1" Click="Button_Click_1" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Grid.Row="1"/>
-        <RadioButton x:Name="RadioButton1" Grid.ColumnSpan="2" Content="JPG" HorizontalAlignment="Left" Margin="54,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003" Grid.Row="1"/>
-        <RadioButton x:Name="RadioButton2" Grid.ColumnSpan="2" Content="PNG" HorizontalAlignment="Left" Margin="54,337,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.14,-1.003" Grid.Row="1"/>
-        <Button Grid.ColumnSpan="2" Content="Конвертировать" Margin="253,332,0,0" Click="Button_Click_2" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137" Grid.Row="1"/>
-        <ProgressBar x:Name="progressBar1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="37" Margin="50,0,0,379" VerticalAlignment="Bottom" Width="540" Value="0" SmallChange="0" Grid.Row="1"/>
-        <ScrollViewer Background ="GhostWhite" AllowDrop="True" PreviewDrop="get_files_from_explorer" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="142" Margin="50,0,0,196" VerticalAlignment="Bottom" Width="540" RenderTransformOrigin="-0.32,0.82" CanContentScroll="True" Grid.Row="1">
-            <StackPanel x:Name="FilesPanel" Height="142" Width="524">
+        <Button Content="Выбрать файлы" AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="34,272,361,148" Grid.Column="3" Click="Button_Click" Height="Auto" Grid.Row="1"/>
+        <Button Content="Путь сохранения" Margin="344,272,51,148" Grid.Column="3" Click="Button_Click_1" Height="Auto" Grid.Row="1"/>
+        <RadioButton x:Name="RadioButton1" Content="JPG" Margin="35,391,542,43" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
+        <RadioButton  x:Name="RadioButton2" Content="PNG" Margin="35,365,542,69" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
+        <Button Content="Конвертировать" Margin="228,332,256,88" Click="Button_Click_2" Height="Auto" Grid.Row="1" Grid.Column="3"/>
+        <Border Grid.ColumnSpan="3" Margin="0,0,15,452" Grid.RowSpan="2"></Border>
+        <ProgressBar Background="Gray" Foreground="LightGreen" x:Name="progressBar1" Height="Auto" Margin="39,18,51,397" Value="0" SmallChange="0" Grid.Row="1" Grid.Column="3"/>
+        <ScrollViewer Background="Gray"  x:Name="FilesViewer"  AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="35,102,51,208" RenderTransformOrigin="-0.32,0.82" CanContentScroll="True" Grid.Row="1" Grid.Column="3">
+            <StackPanel x:Name="FilesPanel"  Height="142" Width="524">
                 <StackPanel.ToolTip>
                     <ToolTip>
                         Нажмите на файл два раза левой кнопкой для предварительного просмотра!
@@ -31,13 +43,23 @@
                 </StackPanel.ToolTip>
             </StackPanel>
         </ScrollViewer>
-        <Label Grid.ColumnSpan="2" Content="Формат для конвертирования:" HorizontalAlignment="Left" Margin="50,306,0,0" VerticalAlignment="Top" Width="180" Grid.Row="1"/>
-        <Label Grid.ColumnSpan="2" Content="Открытые файлы:" HorizontalAlignment="Left" Margin="50,72,0,0" VerticalAlignment="Top" Width="309" Grid.Row="1"/>
-        <Button Click="Clean_Click" x:Name="CleanFilesButton" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="565,72,0,0" VerticalAlignment="Top" Width="25" Height="25" RenderTransformOrigin="-0.84,0.44" Visibility="Hidden" Grid.Row="1">
-            <Image x:Name="CleanImage" Source="clean.png" Height="20" Width="20" Stretch="Fill"/>
+        <Label Content="Формат:" Margin="34,338,513,90" Grid.Row="1" Grid.Column="3"/>
+        <Label Content="Открытые файлы:" Margin="35,63,281,365" Grid.Row="1" Grid.Column="3"/>
+        <Button Visibility="Hidden" Click="Clean_Click" x:Name="CleanFilesButton" Margin="530,64,51,365" Height="Auto" Grid.Row="1" Grid.Column="3" RenderTransformOrigin="0.404,0.35">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Broom" Height="16" Width="14"/>
+            </StackPanel>
         </Button>
-        <ToolBar Grid.ColumnSpan="2" HorizontalAlignment="Right" Height="21" Margin="-3,0,566,431" VerticalAlignment="Bottom" Width="77" Grid.RowSpan="2">
-            <Button Content="Справка" HorizontalAlignment="Center" VerticalAlignment="Top" Width="65" Height="22" Click="Button_Click_3"/>
-        </ToolBar>
+
+        <materialDesign:PopupBox Content="PopupBox" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10,25,596,404" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Button Content="Справка" Click="Button_Click_3" />
+        </materialDesign:PopupBox>
+        <CheckBox x:Name="ThemeCheckBox" Content="Темная тема" Grid.Column="3" HorizontalAlignment="Left" Margin="475,394,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Unchecked="Set_Theme" Checked="Set_Theme" Width="99"/>
+        <materialDesign:DialogHost>
+            <materialDesign:DialogHost.DialogContent>
+                fsa
+            </materialDesign:DialogHost.DialogContent>
+            sadfa
+        </materialDesign:DialogHost>
     </Grid>
 </Window>

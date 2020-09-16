@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MaterialDesignThemes.Wpf;
+using System.Windows;
 
 namespace Simple_HEIC_convertor
 {
@@ -7,5 +8,6 @@ namespace Simple_HEIC_convertor
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
