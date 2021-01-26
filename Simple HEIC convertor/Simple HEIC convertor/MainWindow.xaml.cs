@@ -260,10 +260,12 @@ namespace Simple_HEIC_convertor
 
         private async void AsyncConverter()
         {
+            CleanFilesButton.Visibility = Visibility.Hidden;
             bool IsPathChose = true;
             if (!(bool)RadioButton1.IsChecked && !(bool)RadioButton2.IsChecked)
             {
                 MessageBox.Show("Вы не выбрали формат! Пожалуйста выберите формат!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                CleanFilesButton.Visibility = Visibility.Visible;
                 return;
             }
             try
@@ -307,10 +309,12 @@ namespace Simple_HEIC_convertor
                 else
                     MessageBox.Show("Конвертация успешно завершена!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
                 progressBar1.Value = 0;
+                CleanFilesButton.Visibility = Visibility.Visible;
             }
             catch (Exception exc)
             {
                 MessageBox.Show($"При конвертировании произошла ошибка! {exc.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                CleanFilesButton.Visibility = Visibility.Visible;
             }
             //await Task.Delay(1);
             
