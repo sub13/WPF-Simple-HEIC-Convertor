@@ -27,3 +27,6 @@
 
 ## Attention!
 Project in progress and thats why it can has bugs
+
+## Running
+if you want to run application, you need download folder "executable file" and open "Simple HEIC convertor.exe" 
