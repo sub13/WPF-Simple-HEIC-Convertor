@@ -1,22 +1,16 @@
 ﻿using ImageMagick;
 using Microsoft.Win32;
+using Simple_HEIC_convertor.Services;
+using Simple_HEIC_convertor.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Diagnostics;
-using System.IO;
-using System.Windows.Threading;
-using System.Runtime.Remoting.Contexts;
-using System.Windows.Media;
-using MaterialDesignThemes.Wpf;
-using System.Security.Principal;
-using System.Globalization;
-using System.Management;
 
 namespace Simple_HEIC_convertor
 {
@@ -25,24 +19,24 @@ namespace Simple_HEIC_convertor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MagickImage Image;
-        private double progressBarValue;
-        private int countPhoto;
-        private string convertPath { get; set; }
         private List<string> openPaths { get; set; }
         private List<string> deletePaths = new List<string> { };
         public MainWindow()
         {
+            bool isDarkTheme = false;
+            string recivedTheme = Get_Current_Windows_Theme();
+            
+            if (recivedTheme == "Dark")
+                isDarkTheme = true;
+
+            DataContext = new ImageConvertorViewModel(new DialogService(), new WorkerImageService(), isDarkTheme);
             AppDomain currentDomain;
             currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += CurrentDomain_UnhandledException;
             Closed += ClearWindows_Temp;
             InitializeComponent();
-            string recivedTheme = Get_Current_Windows_Theme();
             Set_Start_Theme(recivedTheme);
         }
-
-
 
         private void Set_Start_Theme(string recivedTheme)
         {
@@ -127,7 +121,7 @@ namespace Simple_HEIC_convertor
 
         private void Clean_Click(object sender, RoutedEventArgs e)
         {
-            FilesPanel.Children.Clear();
+            //FilesPanel.Children.Clear();
             openPaths.Clear();
             CleanFilesButton.Visibility = Visibility.Hidden;
         }
@@ -170,7 +164,7 @@ namespace Simple_HEIC_convertor
                         elem.IsReadOnlyCaretVisible = true;
                         elem.Cursor = Cursors.Arrow;
                         elem.MouseDoubleClick += files_click_handler;
-                        FilesPanel.Children.Add(elem);
+                        //FilesPanel.Children.Add(elem);
                     }
                 }
                 CleanFilesButton.Visibility = Visibility.Visible;
@@ -210,26 +204,6 @@ namespace Simple_HEIC_convertor
             //pictureWindow.load_picture(path);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CommonOpenFileDialog dfd = new CommonOpenFileDialog();
-            dfd.Title = "Путь для конвертирования...";
-            dfd.IsFolderPicker = true;
-            dfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            if (dfd.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                try
-                {
-                    convertPath = dfd.FileName;
-                }
-                catch
-                {
-                    MessageBox.Show("При выборе пути произошла не предвиденная ошибка!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    MessageBox.Show("Выбран путь по умолчанию! (Рабочий стол пользователя)", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    convertPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                }
-            }
-        }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -248,76 +222,6 @@ namespace Simple_HEIC_convertor
                 MessageBox.Show("Вы не выбрали файлы для конвертирования! Пожалуйста выберите файлы!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            AsyncConverter();
-        }
-
-
-        private async Task progressBarIncrease(double progressBarValue)
-        {
-            progressBar1.Value += progressBarValue;
-            await Task.Delay(5);
-        }
-
-        private async void AsyncConverter()
-        {
-            CleanFilesButton.Visibility = Visibility.Hidden;
-            bool IsPathChose = true;
-            if (!(bool)RadioButton1.IsChecked && !(bool)RadioButton2.IsChecked)
-            {
-                MessageBox.Show("Вы не выбрали формат! Пожалуйста выберите формат!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                CleanFilesButton.Visibility = Visibility.Visible;
-                return;
-            }
-            try
-            {
-                countPhoto = openPaths.Count;
-                progressBarValue = 100 / countPhoto;
-                if(convertPath == null || convertPath == "")
-                {
-                    convertPath = await Task.Run (()=> Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
-                    IsPathChose = false;
-                }
-                foreach (string k in openPaths)
-                {
-                    using (MagickImage image = await Task.Run(()=> new MagickImage(k)))
-                    {
-                        int pos = k.LastIndexOf(@"\");
-                        StringBuilder path = new StringBuilder(k.Substring(pos));
-                        if ((bool)RadioButton1.IsChecked)
-                        {
-                            image.Format = await Task.Run(() =>  MagickFormat.Jpeg);
-                            Image = image;
-                            path.Remove(path.ToString().LastIndexOf("."), 5);
-                            path.Append(".jpeg");
-                        }
-                        else if ((bool)RadioButton2.IsChecked)
-                        {
-                            image.Format = await Task.Run(() => MagickFormat.Png);
-                            Image = image;
-                            path.Remove(path.ToString().LastIndexOf("."), 5);
-                            path.Append(".png");
-                        }
-                        await Task.Run( () => image.Write(convertPath + path.ToString()));
-                    }
-                    countPhoto--;
-                    if (countPhoto == 0)
-                        progressBarValue = 100;
-                    await progressBarIncrease(progressBarValue);
-                }
-                if(!IsPathChose)
-                    MessageBox.Show("Конвертация успешно завершена!Поскольку вы ранее не выбрали путь, все файлы были сохранены на рабочем столе!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
-                else
-                    MessageBox.Show("Конвертация успешно завершена!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
-                progressBar1.Value = 0;
-                CleanFilesButton.Visibility = Visibility.Visible;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show($"При конвертировании произошла ошибка! {exc.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                CleanFilesButton.Visibility = Visibility.Visible;
-            }
-            //await Task.Delay(1);
-            
         }
 
         // Отслеживание темы
@@ -372,36 +276,15 @@ namespace Simple_HEIC_convertor
         }
 
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Разработал: isergei151@gmail.com\nGitHub: https://github.com/sub13/WPF-Simple-HEIC-Convertor", "Контакты!", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Exception Ex = (Exception)e.ExceptionObject;
             MessageBox.Show($"При запуске произошла ошибка! {Ex.TargetSite} {Ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void Set_Theme(object sender, RoutedEventArgs e)
+        private void progressBar1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            var paletteHelper = new PaletteHelper();
-            ITheme theme = paletteHelper.GetTheme();
-            CheckBox checkbox;
 
-            if (e.Source is CheckBox)
-            {
-                checkbox = (CheckBox)e.Source;
-
-                if ((bool) checkbox.IsChecked)
-                    theme.SetBaseTheme(Theme.Dark);
-                else
-                    theme.SetBaseTheme(Theme.Light);
-            }
-            paletteHelper.SetTheme(theme);
-            DialogHost.Show("dfg");
-            UpdateLayout();
         }
     }
 }
