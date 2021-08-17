@@ -1,5 +1,4 @@
-﻿using MaterialDesignThemes.Wpf;
-using Simple_HEIC_convertor.Commands;
+﻿using Simple_HEIC_convertor.Commands;
 using Simple_HEIC_convertor.Enums;
 using Simple_HEIC_convertor.Models;
 using Simple_HEIC_convertor.Services;
@@ -16,32 +15,41 @@ namespace Simple_HEIC_convertor.ViewModels
     class ImageConvertorViewModel : INotifyPropertyChanged
     {
         private string _convertPath;
+
         private ImageFormat  _imageFormat = ImageFormat.Jpeg;
         private ObservableCollection<ImageFile> _allFilePaths = new ObservableCollection<ImageFile>();
-        private bool _isCleanButtonVisible = false;
-        private IDialogService _dialogService;
-        private IWorkerImageService _workerImageService;
         private ImageFile _selectedImage;
+        private ColorSchemes _selectedColorScheme = ColorSchemes.Green;
+
         private bool _isConvertingStart = false;
         private bool _isDarkTheme;
-        private ColorSchemes colorScheme;
+        private bool _isCleanButtonVisible = false;
 
-        public ImageConvertorViewModel(IDialogService dialogService, IWorkerImageService workerImageService, bool isDarkTheme = false)
+        private readonly IDialogService _dialogService;
+        private readonly IWorkerImageService _workerImageService;
+        private readonly ICustomizationService _customizationService;
+
+        public ImageConvertorViewModel(IDialogService dialogService, 
+            IWorkerImageService workerImageService, 
+            ICustomizationService customizationService,
+            bool isDarkTheme = false)
         {
             _dialogService = dialogService;
             _workerImageService = workerImageService;
             IsDarkTheme = isDarkTheme;
+            _customizationService = customizationService;
         }
 
         public ColorSchemes SelectedColorScheme 
         { 
             get 
             { 
-                return colorScheme; 
+                return _selectedColorScheme; 
             } 
             set 
             {
-                colorScheme = value; 
+                _selectedColorScheme = value;
+                OnPropertyChanged("SelectedColorScheme");
             } 
         }
 
@@ -165,6 +173,18 @@ namespace Simple_HEIC_convertor.ViewModels
             }
         }
 
+        private FileImagesCommand _changeColorSchemeCommand;
+        public FileImagesCommand ChangeColorSchemeCommand
+        {
+            get
+            {
+                return _changeColorSchemeCommand ??
+                    (_changeColorSchemeCommand = new FileImagesCommand(obj =>
+                    {
+                        _customizationService.ChangeColorScheme(SelectedColorScheme);
+                    }));
+            }
+        }
 
         private FileImagesCommand _setDarkThemeCommand;
         public FileImagesCommand SetDarkThemeCommand
@@ -174,7 +194,7 @@ namespace Simple_HEIC_convertor.ViewModels
                 return _setDarkThemeCommand ??
                     (_setDarkThemeCommand = new FileImagesCommand(obj =>
                     {
-                        Set_Theme();
+                        _customizationService.Set_Theme(IsDarkTheme);
                     }));
             }
         }
@@ -187,8 +207,11 @@ namespace Simple_HEIC_convertor.ViewModels
                 return _openImagePreviewCommand ??
                     (_openImagePreviewCommand = new FileImagesCommand(obj =>
                     {
-                        Thread thread = new Thread(() => _workerImageService.OpenHEICImage(SelectedImage.Path));
-                        thread.Start();
+                        if (!String.IsNullOrEmpty(SelectedImage.Path))
+                        {
+                            Thread thread = new Thread(() => _workerImageService.OpenHEICImage(SelectedImage.Path));
+                            thread.Start();
+                        }
                     }));
             }
         }
@@ -346,16 +369,5 @@ namespace Simple_HEIC_convertor.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        private void Set_Theme()
-        {
-            var paletteHelper = new PaletteHelper();
-            ITheme theme = paletteHelper.GetTheme();
-                if (IsDarkTheme)
-                    theme.SetBaseTheme(Theme.Dark);
-                else
-                    theme.SetBaseTheme(Theme.Light);
-            paletteHelper.SetTheme(theme);
-            //UpdateLayout();
-        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:enums="clr-namespace:Simple_HEIC_convertor.Utils"
-        xmlns:colorEnum="Simple_HEIC_convertor.Enums"
+        xmlns:colorEnum="clr-namespace:Simple_HEIC_convertor.Enums"
         xmlns:ie="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Icon="apple1.ico"
@@ -21,9 +21,7 @@
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="cleanButtonToVisibility" />
-        <!--<ResourceDictionary>
-            <enums:EnumItemsSource x:Key="ExampleEnumItemsSource" Type="{x:Type colorEnum:ColorSchemes}" />
-        </ResourceDictionary>-->
+        <enums:EnumItemsSource x:Key="EnumItemsConvertor" Type="{x:Type colorEnum:ColorSchemes}" />
     </Window.Resources>
     <Grid Margin="0,-2,-8,-4" HorizontalAlignment="Right" Width="640" Height="455" VerticalAlignment="Top">
         <Grid.RowDefinitions>
@@ -48,37 +46,35 @@
         <RadioButton IsChecked="{Binding IsPngFormat}" x:Name="RadioButton2" Content="PNG" Margin="35,365,542,69" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
         <Button Command="{Binding ConvertImageCommand}" Content="Конвертировать" Margin="228,332,256,88" Height="Auto" Grid.Row="1" Grid.Column="3"/>
         <Border Grid.ColumnSpan="3" Margin="0,0,15,452" Grid.RowSpan="2"></Border>
-        <ProgressBar Background="Gray" x:Name="progressBar1" Height="Auto" Margin="39,18,51,397" SmallChange="0" Grid.Row="1" Grid.Column="3" IsIndeterminate="{Binding IsConvertingStart}" ValueChanged="progressBar1_ValueChanged">
+        <ProgressBar Background="Gray" x:Name="progressBar1" Height="Auto" Margin="39,18,51,397" SmallChange="0" Grid.Row="1" Grid.Column="3" IsIndeterminate="{Binding IsConvertingStart}" >
 
         </ProgressBar>
         <ScrollViewer Background="Gray" x:Name="FilesViewer" AllowDrop="True"
                       Margin="39,102,51,208" RenderTransformOrigin="-0.32,0.82" 
-                      CanContentScroll="True" Grid.Row="1" Grid.Column="3">
-            <StackPanel Grid.Row="1" Height="145" HorizontalAlignment="Center" VerticalAlignment="Top" FlowDirection="LeftToRight" Width="508">
-                <ItemsControl ItemsSource="{Binding Path=AllFilePaths}" >
+                      Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Hidden">
+            
+                <ListBox ItemsSource="{Binding Path=AllFilePaths}" SelectedItem="{Binding SelectedImage}" HorizontalAlignment="Right" Width="508" Height="142">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Path=Path}" IsReadOnly="True" IsReadOnlyCaretVisible="True" Cursor="Arrow">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="MouseDoubleClick">
-                                        <i:InvokeCommandAction 
-                                            Command="{Binding Path=OpenImagePreviewCommand}"
-                                            CommandParameter="{Binding}" />
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </TextBox>
+                            <TextBlock Text="{Binding Path=Path}" Cursor="Arrow" >
+                            </TextBlock>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ItemsControl>
-                <StackPanel.ToolTip>
+                </ListBox>
+                <ScrollViewer.ToolTip>
                     <ToolTip>
                         Нажмите на файл два раза левой кнопкой для предварительного просмотра!
                     </ToolTip>
-                </StackPanel.ToolTip>
-            </StackPanel>
+                </ScrollViewer.ToolTip>
+            
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewDrop">
                     <i:InvokeCommandAction Command="{Binding DranAndDropFilesCommand}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction
+                        Command="{Binding Path=OpenImagePreviewCommand}"
+                        CommandParameter="{Binding}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ScrollViewer>
@@ -109,12 +105,13 @@
         </CheckBox>
         <ComboBox HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" 
                   Width="99" Grid.Column="3" Margin="475,391,0,0"
-                  ItemsSource="{Binding ColorSchemes}" SelectedItem="{Binding SelectedColorScheme}">
-            <!--<ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Converter={StaticResource enumConverter}}"/>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>-->
+                  ItemsSource="{StaticResource EnumItemsConvertor}" SelectedItem="{Binding SelectedColorScheme}" IsEditable="False"
+                  SelectedValue="{Binding SelectedColorScheme, Converter={StaticResource EnumItemsConvertor}}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding ChangeColorSchemeCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </ComboBox>
 
     </Grid>
