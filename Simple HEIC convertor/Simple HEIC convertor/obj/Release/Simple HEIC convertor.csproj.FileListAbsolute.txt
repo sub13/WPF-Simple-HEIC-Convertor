@@ -35,3 +35,14 @@ C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Rel
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignThemes.Wpf.pdb
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\bin\Release\MaterialDesignThemes.Wpf.xml
 C:\Users\Sergey\Desktop\HEIC\Simple HEIC convertor\Simple HEIC convertor\obj\Release\App.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.csproj.AssemblyReference.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\MainWindow.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\App.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor_MarkupCompile.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor_MarkupCompile.lref
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\App.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\PictureWindow.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.exe
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Release\Simple HEIC convertor.pdb

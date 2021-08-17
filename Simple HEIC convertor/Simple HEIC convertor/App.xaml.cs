@@ -1,5 +1,4 @@
-﻿using MaterialDesignThemes.Wpf;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Simple_HEIC_convertor
 {

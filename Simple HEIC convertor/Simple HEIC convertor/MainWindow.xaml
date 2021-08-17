@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:enums="clr-namespace:Simple_HEIC_convertor.Utils"
+        xmlns:colorEnum="clr-namespace:Simple_HEIC_convertor.Enums"
+        xmlns:ie="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Icon="apple1.ico"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -15,7 +19,10 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Simple HEIC Convertor" Height="480" Width="640" ResizeMode="CanMinimize">
 
-
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="cleanButtonToVisibility" />
+        <enums:EnumItemsSource x:Key="EnumItemsConvertor" Type="{x:Type colorEnum:ColorSchemes}" />
+    </Window.Resources>
     <Grid Margin="0,-2,-8,-4" HorizontalAlignment="Right" Width="640" Height="455" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
@@ -27,39 +34,85 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="125*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Выбрать файлы" AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="34,272,361,148" Grid.Column="3" Click="Button_Click" Height="Auto" Grid.Row="1"/>
-        <Button Content="Путь сохранения" Margin="344,272,51,148" Grid.Column="3" Click="Button_Click_1" Height="Auto" Grid.Row="1"/>
-        <RadioButton x:Name="RadioButton1" Content="JPG" Margin="35,391,542,43" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
-        <RadioButton  x:Name="RadioButton2" Content="PNG" Margin="35,365,542,69" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
-        <Button Content="Конвертировать" Margin="228,332,256,88" Click="Button_Click_2" Height="Auto" Grid.Row="1" Grid.Column="3"/>
+        <Button Command="{Binding OpenImagesCommand}" x:Name="OpenFilesButton" Content="Выбрать файлы" AllowDrop="True" Margin="34,272,361,148" Grid.Column="3"  Height="Auto" Grid.Row="1">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewDrop">
+                    <i:InvokeCommandAction Command="{Binding DranAndDropFilesCommand}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Command="{Binding SetConvertPathCommand}" Content="Путь сохранения" Margin="344,272,51,148" Grid.Column="3" Height="Auto" Grid.Row="1"/>
+        <RadioButton IsChecked="{Binding IsJpgFormat}" x:Name="RadioButton1" Content="JPG" Margin="35,391,542,43" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
+        <RadioButton IsChecked="{Binding IsPngFormat}" x:Name="RadioButton2" Content="PNG" Margin="35,365,542,69" RenderTransformOrigin="0.14,-1.003" Grid.Row="1" Grid.Column="3"/>
+        <Button Command="{Binding ConvertImageCommand}" Content="Конвертировать" Margin="228,332,256,88" Height="Auto" Grid.Row="1" Grid.Column="3"/>
         <Border Grid.ColumnSpan="3" Margin="0,0,15,452" Grid.RowSpan="2"></Border>
-        <ProgressBar Background="Gray" Foreground="LightGreen" x:Name="progressBar1" Height="Auto" Margin="39,18,51,397" Value="0" SmallChange="0" Grid.Row="1" Grid.Column="3"/>
-        <ScrollViewer Background="Gray"  x:Name="FilesViewer"  AllowDrop="True" PreviewDrop="get_files_from_explorer" Margin="35,102,51,208" RenderTransformOrigin="-0.32,0.82" CanContentScroll="True" Grid.Row="1" Grid.Column="3">
-            <StackPanel x:Name="FilesPanel"  Height="142" Width="524">
-                <StackPanel.ToolTip>
+        <ProgressBar Background="Gray" x:Name="progressBar1" Height="Auto" Margin="39,18,51,397" SmallChange="0" Grid.Row="1" Grid.Column="3" IsIndeterminate="{Binding IsConvertingStart}" >
+
+        </ProgressBar>
+        <ScrollViewer Background="Gray" x:Name="FilesViewer" AllowDrop="True"
+                      Margin="39,102,51,208" RenderTransformOrigin="-0.32,0.82" 
+                      Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Hidden">
+            
+                <ListBox ItemsSource="{Binding Path=AllFilePaths}" SelectedItem="{Binding SelectedImage}" HorizontalAlignment="Right" Width="508" Height="142">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Path}" Cursor="Arrow" >
+                            </TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
+                <ScrollViewer.ToolTip>
                     <ToolTip>
                         Нажмите на файл два раза левой кнопкой для предварительного просмотра!
                     </ToolTip>
-                </StackPanel.ToolTip>
-            </StackPanel>
+                </ScrollViewer.ToolTip>
+            
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewDrop">
+                    <i:InvokeCommandAction Command="{Binding DranAndDropFilesCommand}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction
+                        Command="{Binding Path=OpenImagePreviewCommand}"
+                        CommandParameter="{Binding}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </ScrollViewer>
         <Label Content="Формат:" Margin="34,338,513,90" Grid.Row="1" Grid.Column="3"/>
         <Label Content="Открытые файлы:" Margin="35,63,281,365" Grid.Row="1" Grid.Column="3"/>
-        <Button Visibility="Hidden" Click="Clean_Click" x:Name="CleanFilesButton" Margin="530,64,51,365" Height="Auto" Grid.Row="1" Grid.Column="3" RenderTransformOrigin="0.404,0.35">
+
+        <Button Visibility="{Binding IsCleanButtonVisible, Converter={StaticResource cleanButtonToVisibility}, FallbackValue=Hidden }" Command="{Binding ClearFilePathsCommand}" x:Name="CleanFilesButton" Margin="530,64,51,365" Height="Auto" Grid.Row="1" Grid.Column="3" RenderTransformOrigin="0.404,0.35">
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Broom" Height="16" Width="14"/>
             </StackPanel>
         </Button>
 
         <materialDesign:PopupBox Content="PopupBox" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10,25,596,404" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <Button Content="Справка" Click="Button_Click_3" />
+            <Button Content="Справка" Command="{Binding OpenHelpCommand}" />
         </materialDesign:PopupBox>
-        <CheckBox x:Name="ThemeCheckBox" Content="Темная тема" Grid.Column="3" HorizontalAlignment="Left" Margin="475,394,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Unchecked="Set_Theme" Checked="Set_Theme" Width="99"/>
-        <materialDesign:DialogHost>
-            <materialDesign:DialogHost.DialogContent>
-                fsa
-            </materialDesign:DialogHost.DialogContent>
-            sadfa
-        </materialDesign:DialogHost>
+        <CheckBox x:Name="ThemeCheckBox" Content="Темная тема" Grid.Column="3" HorizontalAlignment="Left" 
+                  Margin="475,367,0,0" Grid.RowSpan="2" VerticalAlignment="Top" IsChecked="{Binding IsDarkTheme}" 
+                  Width="99">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Checked">
+                    <i:InvokeCommandAction Command="{Binding SetDarkThemeCommand}"/>
+                </i:EventTrigger>
+
+                <i:EventTrigger EventName="Unchecked">
+                    <i:InvokeCommandAction Command="{Binding SetDarkThemeCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </CheckBox>
+        <ComboBox HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" 
+                  Width="99" Grid.Column="3" Margin="475,391,0,0"
+                  ItemsSource="{StaticResource EnumItemsConvertor}" SelectedItem="{Binding SelectedColorScheme}" IsEditable="False"
+                  SelectedValue="{Binding SelectedColorScheme, Converter={StaticResource EnumItemsConvertor}}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding ChangeColorSchemeCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
+
     </Grid>
 </Window>
