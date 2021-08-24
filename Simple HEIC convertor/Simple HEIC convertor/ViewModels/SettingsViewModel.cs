@@ -1,9 +1,13 @@
-﻿using Simple_HEIC_convertor.Commands;
+﻿using MaterialDesignThemes.Wpf;
+using Simple_HEIC_convertor.Commands;
 using Simple_HEIC_convertor.Models;
 using Simple_HEIC_convertor.Services;
+using Simple_HEIC_convertor.Services.Interfaces;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Simple_HEIC_convertor.ViewModels
 {
@@ -22,6 +26,30 @@ namespace Simple_HEIC_convertor.ViewModels
             };
         }
 
+        private FileImagesCommand _setThemeWithColorPicker;
+        public FileImagesCommand SetThemeWithColorPicker
+        {
+            get
+            {
+                return _setThemeWithColorPicker ??
+                    (_setThemeWithColorPicker = new FileImagesCommand(obj =>
+                    {
+                        var eventArgs = (MouseButtonEventArgs)obj;
+                        ColorPicker colorPicker = (ColorPicker)eventArgs.Source;
+                        ColorRGB newColorRGB = new ColorRGB()
+                        {
+                            R = colorPicker.Color.R,
+                            G = colorPicker.Color.G,
+                            B = colorPicker.Color.B
+                        };
+
+                        SelectedColorRGB = newColorRGB;
+                        //Color color;
+                        //ColorPickerWindow.ShowDialog(out color);
+                    }));
+            }
+        }
+
         public ColorRGB _selectedColorRGB;
 
         public ColorRGB SelectedColorRGB
@@ -33,6 +61,7 @@ namespace Simple_HEIC_convertor.ViewModels
             set
             {
                 _selectedColorRGB = value;
+                OnPropertyChanged("SelectedColorRGB");
             }
         }
 
@@ -44,7 +73,7 @@ namespace Simple_HEIC_convertor.ViewModels
                 return _setThemeByRGB ??
                     (_setThemeByRGB = new FileImagesCommand(obj =>
                     {
-                        Thread thread = new Thread(() => _customizationService.SetCustomRGBTheme(SelectedColorRGB));
+                        Thread thread = new Thread(() => _customizationService.SetCustomRGBTheme(SelectedColorRGB, true));
                         thread.Start();
                     }));
             }

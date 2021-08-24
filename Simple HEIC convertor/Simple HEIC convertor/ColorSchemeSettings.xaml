@@ -3,22 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:Simple_HEIC_convertor" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Ручная настройка цвета" Height="200" Width="200" ResizeMode="NoResize">
-    <Grid Margin="0,0,-1,0" HorizontalAlignment="Left" Width="195" Height="161" VerticalAlignment="Bottom">
+        Title="Ручная настройка цвета" Height="398.609" Width="320" ResizeMode="NoResize">
+    <Grid Margin="0,0,-1,0" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Введите значение RGB" Grid.Column="1" Margin="22,0,0,137" HorizontalAlignment="Left" Width="134" Height="23" VerticalAlignment="Bottom"/>
+        <Label Content="Введите значение RGB" Grid.Column="1" Margin="10,0,0,115" HorizontalAlignment="Left" Width="134" Height="23" VerticalAlignment="Bottom"/>
 
-        <Label Content="R" HorizontalAlignment="Left" Margin="54,39,0,0" VerticalAlignment="Top" Grid.Column="1" Height="22" Width="21"/>
-        <Label Content="G" Margin="54,61,0,0" Grid.Column="1" HorizontalAlignment="Left" Width="21" Height="24" VerticalAlignment="Top"/>
-        <Label Content="B" HorizontalAlignment="Left" Margin="54,85,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.578,1.194" Height="24" Width="21"/>
+        <Label Content="R" HorizontalAlignment="Left" Margin="17,278,0,0" VerticalAlignment="Top" Grid.Column="1" Height="22" Width="21"/>
+        <Label Content="G" Margin="17,300,0,0" Grid.Column="1" HorizontalAlignment="Left" Width="21" Height="24" VerticalAlignment="Top"/>
+        <Label Content="B" HorizontalAlignment="Left" Margin="17,324,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.578,1.194" Height="24" Width="21"/>
 
-        <StackPanel DataContext="{Binding SelectedColorRGB}" Grid.Column="1" HorizontalAlignment="Left" Height="76" Margin="80,29,0,0" VerticalAlignment="Top" Width="46">
+        <StackPanel DataContext="{Binding SelectedColorRGB}" Grid.Column="1" HorizontalAlignment="Left" Height="76" Margin="43,268,0,0" VerticalAlignment="Top" Width="46">
             <TextBox MaxLength="3" Height="23" TextWrapping="Wrap" Text="{Binding R}">
                 <materialDesign:TextFieldAssist.CharacterCounterStyle>
                     <Style TargetType="TextBlock" />
@@ -36,7 +38,20 @@
             </TextBox>
         </StackPanel>
 
-        <Button Command="{Binding SetThemeByRGB}" Content="Ok" Grid.Column="1" Margin="68,114,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.176,0.319" HorizontalAlignment="Left" Width="52"/>
-        
+        <Button Command="{Binding SetThemeByRGB}" Grid.Column="1" Margin="230,318,33,0" Height="26" RenderTransformOrigin="0.176,0.319" VerticalAlignment="Top" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="FloppyDisc" Height="16" Width="14"/>
+            </StackPanel>
+        </Button>
+        <materialDesign:ColorPicker  Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="209" Width="305">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                    <i:InvokeCommandAction
+                        Command="{Binding Path=SetThemeWithColorPicker}"
+                        PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </materialDesign:ColorPicker>
+
     </Grid>
 </Window>

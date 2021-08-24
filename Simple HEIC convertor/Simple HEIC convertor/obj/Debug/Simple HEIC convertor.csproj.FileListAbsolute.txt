@@ -75,7 +75,6 @@ C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEI
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\ColorSchemeSettings.g.cs
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\ColorSchemeSettings.baml
-C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.exe.config
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Buffers.dll
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Memory.dll
@@ -94,4 +93,66 @@ C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEI
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Text.Json.xml
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.ValueTuple.xml
-C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.AssemblyReference.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.exe.config
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.exe
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Simple HEIC convertor.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET-Q16-AnyCPU.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET.Core.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignColors.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Buffers.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Memory.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Text.Json.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.ValueTuple.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET-Q16-AnyCPU.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Magick.NET.Core.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Buffers.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Memory.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Text.Json.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\System.ValueTuple.xml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.AssemblyReference.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.exe.config
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\ColorSchemeSettings.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\MainWindow.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\App.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor_MarkupCompile.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor_MarkupCompile.lref
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\App.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\ColorSchemeSettings.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\MainWindow.baml
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.g.resources
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple_HEIC_convertor.Properties.Resources.resources
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.GenerateResource.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.CoreCompileInputs.cache
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.csproj.CopyComplete
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.exe
+C:\Users\Siarhei.Shapiatukha\Desktop\New folder (2)\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\obj\Debug\Simple HEIC convertor.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\WriteableBitmapEx.Wpf.dll
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\WriteableBitmapEx.Wpf.pdb
+C:\Users\Siarhei.Shapiatukha\Desktop\My Git\WPF-Simple-HEIC-Convertor\Simple HEIC convertor\Simple HEIC convertor\bin\Debug\WriteableBitmapEx.Wpf.xml

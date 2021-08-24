@@ -11,6 +11,5 @@ namespace Simple_HEIC_convertor
         {
             InitializeComponent();
         }
-
     }
 }
