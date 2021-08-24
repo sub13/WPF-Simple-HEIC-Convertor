@@ -1,6 +1,7 @@
 ﻿using ImageMagick;
 using Simple_HEIC_convertor.Enums;
 using Simple_HEIC_convertor.Models;
+using Simple_HEIC_convertor.Services.Interfaces;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
